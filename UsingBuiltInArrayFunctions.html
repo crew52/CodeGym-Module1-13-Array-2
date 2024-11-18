@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Using built-in array functions</title>
+</head>
+<body>
+<script>
+  <!-- p1 -->
+  const myColor = ["Red", "Green", "White", "Black"];
+  let text = myColor.join(",")
+  console.log(text);
+
+  <!-- p2 -->
+  let number = prompt("Enter number: ");
+  let result = [number[0]];
+  for (let i = 1; i < number.length; i++) {
+    if (number[i-1] % 2 === 0 && number[i] % 2 === 0){
+      result.push('-' + number[i]);
+    }else{
+      result.push(number[i]);
+    }
+  }
+  console.log(result.join(''));
+
+  <!-- p3 -->
+  let string = "The Quick Brown Fox";
+  let change = "";
+  for (let i = 0; i < string.length; i++) {
+    let char = string[i];
+    if (char === char.toLowerCase()) {
+      change += char.toUpperCase();
+    }else {
+      change += char.toLowerCase();
+    }
+  }
+
+  console.log("Old: " + string);
+  console.log("New: " + change);
+
+</script>
+</body>
+</html>
