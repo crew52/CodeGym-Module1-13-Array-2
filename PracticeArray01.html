@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practice array 01</title>
+</head>
+<body>
+<script>
+/* Bài 1- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử.
+ Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10. */
+const number01 = [5,7,2,6,28,3,6,2,8,22];
+const number02 = [];
+for (let i = 0; i < number01.length; i++) {
+    if (number01[i] >= 10){
+        number02.push(number01[i]);
+    }
+}
+console.log("p1: " + number02);
+
+/*
+* Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau.
+* Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.*/
+const number03 = [5,7,2,6,28,3,11,10,8,22];
+let max = number03[0];
+let index = 0;
+for (let i = 1; i < number03.length; i++) {
+    if (number03[i] > max){
+        max = number03[i];
+        index = i;
+    }
+}
+console.log("P2-Max = " + max + " index = :" + index);
+
+/*
+Bài 3- Viết chương trình khởi tạo mảng số nguyên. Hiển hiện giá trị lớn nhất trong mảng đó.
+In ra giá trị trung bình của các phần tử trong mảng.
+ */
+const number04 = [5,7,2,6,28,3,11,10,8,22];
+let maxP3 = number04[0];
+let sum = 0;
+for (let i = 0; i < number04.length; i++) {
+    if (number04[i] > maxP3){
+        maxP3 = number04[i];
+    }
+    sum += number04[i];
+}
+console.log("P3-Max = " + maxP3 + " Avg = :" + sum/number04.length);
+/*
+Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và
+đảo ngược các phần tử trong mảng đó.
+ */
+let arraySize = +prompt("Enter the size of the array: ");
+const numberArray = [];
+for (let i = 0; i < arraySize; i++) {
+    numberArray.push(+prompt(`Enter number of Array ${i + 1}`));
+}
+console.log("P4: Old Array: " + numberArray);
+console.log("P4: New Array: " + numberArray.reverse());
+/*
+Bài 5- Viết chương trình đếm số nguyên âm trong một chuỗi
+ */
+const number05 = [5,-7,2,-6,28,3,-11,10,-8,22];
+let count05 = 0;
+for (let i = 0; i < number05.length; i++) {
+    if (number05[i] < 0){
+        count05++;
+    }
+}
+console.log("P5: tong so am trong chuoi la : " + count05);
+
+/*
+Bài 6- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử,
+nhập/tạo phần tử số nguyên V. Chương trình tìm xem V có nằm trong mảng số nguyên không?
+Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".
+ */
+
+let arraySize05 = +prompt("Enter the size of the array 06: ");
+const numberArray05 = [];
+for (let i = 0; i < arraySize05; i++) {
+    numberArray05.push(+prompt(`Enter number of Array 06 ${i + 1}`));
+}
+let enterNumber = +prompt("Enter new number: ");
+let check = false;
+for (let i = 0; i < numberArray05.length; i++) {
+    if (numberArray05[i] === enterNumber){
+        check = true;
+        break;
+    }
+}
+(check = true) ? console.log("Find") : console.log("Not Found");
+
+/*
+Bài 7- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử,
+nhập/tạo phần tử số nguyên V. Chương trình kiểm tra xem V có thuộc mảng đã cho không,
+nếu V thuộc mảng đã cho xoá V khỏi mảng (Bản chất việc xoá ở đây tức là
+dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần tử cuối cùng của mảng)
+ */
+let arraySize07 = +prompt("Enter the size of the array 07: ");
+const numberArray07 = [];
+for (let i = 0; i < arraySize07; i++) {
+    numberArray07.push(+prompt(`Enter number of Array 07 ${i + 1}`));
+}
+let enterNumber07 = +prompt("Enter new number: ");
+console.log(numberArray07);
+for (let i = 0; i < numberArray07.length; i++) {
+    if (numberArray07[i] === enterNumber07){
+        numberArray07.splice(i,1);
+        numberArray07[arraySize07.length] = 0;
+        break;
+    }
+}
+console.log(numberArray07);
+/*
+Bài 8- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử.
+Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.
+ */
+const number08 = [5,-7,2,-6,28,3,-11,10,-8,22];
+number08.sort(function compare(a, b) {
+    return a - b;
+});
+console.log(number08.reverse());
+
+/*
+Bài 9- Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử, gọi là mảng a và b.
+Mảng c là một mảng được khai báo gồm 20 phần tử số nguyên.
+ Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c. Hiển thị mảng c.
+ */
+const a = [5,-7,2,-6,28,3,-11,10,-8,22];
+const b = [-5,9,2,36,28,3,21,10,28,1];
+const c = a.concat(b);
+console.log(c);
+</script>
+</body>
+</html>
