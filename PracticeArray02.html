@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PracticeArray02</title>
+</head>
+<body>
+<script>
+    <!--p1-->
+    /*
+    Bài 1: Viết chương trình khởi tạo mảng 2 chiều, gồm một bộ các phần tử có sẵn,
+     in ra các phần tử trong mảng. Chú ý: Sử dụng vòng lặp for lồng nhau
+     */
+    let a = [
+        [1, 2, 1, 24],
+        [8, 11, 9, 4],
+        [7, 0, 7, 27],
+        [7, 4, 28, 14],
+        [3, 10, 26, 7]
+    ];
+    for (let i = 0; i < a.length; i++) {
+        console.log("row " + i)
+        for (let j = 0; j < a[i].length; j++) {
+            console.log(" " + a[i][j])
+        }
+    }
+    /*
+    Bài 2: Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo ngược.
+    Ví dụ, nếu một mảng chứa các ký tự  [ 'c', 's', 'c', '2', '6', '1' ] sau khi thực hiện đảo ngược sẽ là "162csc"
+     */
+    let array02 = [2, 'd', 's', 3, 2];
+    console.log(array02.reverse().join(""));
+
+    /*
+    Bài 3: Viết một chương trình khai báo một mảng ký tự và kích thước của mảng.
+     Chương trình này đếm số ký tự số trong mảng.
+     */
+    const charArray = ['a', '5', 'z', '9', '!', '3', 'd', '2', 'X'];
+    let digitCount = 0;
+    for (let char of charArray) {
+        if (!isNaN(char) && char.trim() !== '') {
+            digitCount++;
+        }
+    }
+    console.log("Số ký tự số trong mảng là:", digitCount);
+
+    /*
+    Bài 4: Viết một chương trình để đếm số từ trong một chuỗi
+     */
+    const inputString = prompt("Nhập vào một chuỗi:");
+    const wordCount = inputString.trim().split(/\s+/).length;
+    console.log("Số từ trong chuỗi là:", wordCount);
+
+    /*
+        BAI 5
+     */
+    const string1 = prompt("Nhập chuỗi thứ nhất:");
+    const string2 = prompt("Nhập chuỗi thứ hai:");
+    if (string1 === string2) {
+        console.log("Hai chuỗi giống nhau.");
+    } else {
+        console.log("Hai chuỗi không giống nhau.");
+    }
+
+    /*
+        BAI 6
+     */
+
+    const charArray1 = prompt("Nhập mảng ký tự (cách nhau bởi dấu phẩy):").split(",");
+    for (let i = 0; i < charArray.length; i++) {
+        if (charArray1[i] === "-") {
+            charArray1[i] = "_";
+        }
+    }
+    console.log("Mảng sau khi thay thế:", charArray1.join(", "));
+</script>
+
+</body>
+</html>

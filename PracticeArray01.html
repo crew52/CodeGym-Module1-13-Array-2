@@ -22,14 +22,12 @@ console.log("p1: " + number02);
 * Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.*/
 const number03 = [5,7,2,6,28,3,11,10,8,22];
 let max = number03[0];
-let index = 0;
 for (let i = 1; i < number03.length; i++) {
     if (number03[i] > max){
         max = number03[i];
-        index = i;
     }
 }
-console.log("P2-Max = " + max + " index = :" + index);
+console.log("P2-Max = " + max + " index = :" + number03.indexOf(max));
 
 /*
 Bài 3- Viết chương trình khởi tạo mảng số nguyên. Hiển hiện giá trị lớn nhất trong mảng đó.
